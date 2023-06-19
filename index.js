@@ -109,30 +109,24 @@ app.post("/shopify-webhook/update_product", async (req, res) => {
   }
 });
 
-app.post("/salla-webhook/product_update", async (req, res) => {
-  try {
-    
-  } catch (error) {
-    console.log(error);
-  }
-});
 
-app.post("/salla-webhook/order", async (req, res) => {
-  if (req.body.event === "order.created") {
-    const order = req.body;
-    order.items.forEach(async (item, i) => {
-      try {
-        setTimeout(async () => {
-          const sallaProduct = await getSallaProduct(item.id);
-          updateAirtableVariantsFromSalla(sallaProduct);
-          updateShopifyVariantsFromSalla(sallaProduct);
-        }, i * 120);
-      } catch (error) {
-        console.log(error);
-      }
-    });
-  }
-});
+
+// app.post("/salla-webhook/order", async (req, res) => {
+//   if (req.body.event === "order.created") {
+//     const order = req.body;
+//     order.items.forEach(async (item, i) => {
+//       try {
+//         setTimeout(async () => {
+//           const sallaProduct = await getSallaProduct(item.id);
+//           updateAirtableVariantsFromSalla(sallaProduct);
+//           updateShopifyVariantsFromSalla(sallaProduct);
+//         }, i * 120);
+//       } catch (error) {
+//         console.log(error);
+//       }
+//     });
+//   }
+// });
 
 app.listen(PORT, async () => {
   console.log("App is running");

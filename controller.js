@@ -18,7 +18,7 @@ const shopifyLocationId = "43343380615";
 const sallaAuthCode = "";
 let sallaRefreshToken = "";
 let sallaAccessToken =
-  "ory_at_2aZHynsTgVvRhYLUpgbL1LwhDbxjeHwVsOi52EDwV8g.JFapwNo0RNS1yM7c47321xuQbvgl6qZjsBBdBrkAP40";
+  "ory_at_P9mDWcW3A3B8Y7yJyhe2g9lhmDXRTXBcx_ozJs4kggo.8KWaOuTtv7rXKyZRK1bqOizvk_z-hy3b15euORyTTdo";
 
 // Airtable functions
 
@@ -215,7 +215,7 @@ const getSallaAccessToken = async () => {
         client_id: "8fa151ee-e894-4ee7-8966-589c87cf6cd3",
         client_secret: "11db7f6347094041674d00a7bed84359",
         grant_type: "authorization_code",
-        code: "ory_ac_PLoDlxlaf3b_4_12EusecuqTLSNEU-XhkMfT3JozLTg.VCXfaZNzgw7dTKaiD0bB9vjmkTTITQa0d76HkWtb9xQ",
+        code: "ory_ac_BMv5XdBXMoKS2eBVI9czXNmPI3fJv4vcw1eVMPd-ylg.9_SCnpFgQj75kS6uGXv8PgubYpCDnD5m7MBcKULK0fk",
         scope: "offline_access",
         redirect_uri: "https://geekyair.com",
       },
