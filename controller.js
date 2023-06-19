@@ -122,7 +122,6 @@ const createAirtableProduct = async (product) => {
 
 const createAirtableVariants = async (variants, productId, productTitle) => {
   try {
-    const airtableVariants = await getAirtableVariants();
     variants.forEach((variant, i) => {
       const requestBody = {
         Handle: productTitle,
@@ -132,14 +131,6 @@ const createAirtableVariants = async (variants, productId, productTitle) => {
         "Option1 Value": variant.option1,
         "Variant Inventory Qty": variant.inventory_quantity,
       };
-      const identicalVariant = airtableVariants.filter((variant) => {
-        return (
-          variant.fields["Variant SKU - Shopify"] == requestBody["Variant SKU - Shopify"]
-        );
-      });
-      if (identicalVariant.length > 0) {
-        return;
-      }
       setTimeout(() => {
         createAirtableRecord(requestBody, variantTableId);
       }, i * 150);
